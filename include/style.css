@@ -430,3 +430,115 @@ ul { margin: 0 auto;width: fit-content;color: var(--muted); }
 
 .no_print { display: none; }
 
+/* ========== 响应式设计 ========== */
+
+/* 汉堡菜单按钮 */
+.nav-toggle {
+    display: none;          /* 桌面端隐藏 */
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    line-height: 1;
+    user-select: none;
+}
+.nav-toggle:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.85);
+}
+
+/* 导航链接容器（桌面端正常 flex 显示） */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* 移动端断点 */
+@media (max-width: 768px) {
+    :root {
+        --page-margin: 0;
+        --nav-height: 50px;
+        --card-radius: 0;
+        --card-padding: 2% 4% 4%;
+    }
+
+    /* 整页滚动，取消 #main 内部滚动 */
+    body {
+        overflow-y: auto;
+        padding-top: calc(var(--nav-height) + var(--nav-gap));
+        padding-bottom: 2vh;
+    }
+
+    #topnav {
+        left: 0;
+        right: 0;
+        border-radius: 0;
+    }
+
+    #nav-spacer {
+        margin: 0;
+    }
+
+    #main {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        max-height: none;
+        overflow-y: visible;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    /* 版权区：取消吸底，跟随内容流 */
+    #copyright {
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        min-height: auto;
+        max-height: none;
+        border-radius: 0;
+        margin: var(--gap-between) 0 0;
+    }
+
+    /* 汉堡按钮显示 */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* 导航链接默认隐藏，垂直排列 */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: var(--backdrop);
+        border-radius: 0 0 12px 12px;
+        padding: 0.5rem 0;
+        gap: 0;
+        z-index: 70;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1.2rem;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* 展开状态 */
+    #topnav.nav-open .nav-links {
+        display: flex;
+    }
+}
+
