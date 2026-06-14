@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://cn-rbl.github.io/sitemap.xml

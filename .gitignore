@@ -1,18 +1,8 @@
-# -*- conding: utf-8 -*-
-# 2026.2.14
-
-# Dir
-.idea/
-.vscode/
-test/
-.venv/
-.history/
-
-# File
 .DS_Store
-.DS_Store?
-._*
-ehtumbs.db
-thumbs.db
-.iml
-.cache
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
