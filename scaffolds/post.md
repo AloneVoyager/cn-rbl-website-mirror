@@ -1,5 +1,5 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+tags: [rbl, cn-rbl, 红蓝灯]
 ---
